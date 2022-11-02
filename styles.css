@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+}
+header{
+    background-color: rgb(126, 223, 255);
+    display:grid;
+    grid-template-columns: 12.5% 82.5% 5%;
+    height: 100px;
+    width: 100%;
+}
+.headerLogo,.headerProfileButton{
+    margin: auto;
+}
+
+body{
+    background-color: rgb(234, 253, 255);
+}
+html, body{
+    height: 100%;
+}
+
+.main{
+    height: calc(100% - 102px);
+    display:grid;
+    grid-template-columns: 12.5% 87.5%;
+}
+
+.sideNav{
+    background-color: rgb(126, 223, 255);
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.sideNavList{
+    background-color: rgb(229, 255, 255);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.sideNavListButton{
+    border: solid rgb(202, 202, 202) 1px;
+    margin: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.sideNavListButton:hover{
+    background-color:rgba(133, 243, 255, 0.545);
+}
+.sideNavChanges{
+    display:grid;
+    grid-template-rows: 10% 90%;
+}
+.sideNavChangesTitle{
+    text-align: center;
+    margin: 10px;
+}
+.sideNavChangesContent{
+    background-color: rgb(235, 235, 235);
+    border: 1px solid black;
+}
+
+.menu{
+    background-color: rgb(191, 250, 255);
+}
+
+.table{
+    height: 80%;
+    width: 80%;
+    margin:auto;
+    display:grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.day{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: rgb(210, 234, 255);
+    border: solid black 1px;
+    border-radius: 10px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown .day:hover {
+    background-color: rgba(255, 255, 255, 0.468);
+  }
+  .dropdown-content p:hover {
+    border:1px solid black;
+    background-image: rgba(89, 0, 255, 0.577);
+  }
+  .dropdown-content{
+    border-radius: 10px;
+    border: 1px solid rgb(147, 147, 147);
+    text-align: center ;
+  }
+  
+  .show {
+    display: block;
+  }
+
+  .working {
+    background-color: rgb(148, 255, 148);
+  }
+
+  .office {
+    background-color: rgb(255, 162, 255)
+  }
+  .vacation{
+    background-color: rgb(146, 146, 255);
+  }
+  .nationalHoliday{
+    background-color: rgb(255, 255, 152);
+  }
+
+.maxxtonLogo img{
+    display: block;
+   width: auto;
+   width: 75%;
+   margin: auto;
+   object-fit: contain;
+}
+
