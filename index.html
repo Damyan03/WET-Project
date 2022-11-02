@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -63,4 +64,71 @@
     </div>
 </body>
 
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/71ba9e514f.js" crossorigin="anonymous"></script>
+    <script src="javascript.js"></script>
+    <title>Maxtton-3</title>
+</head>
+
+<body>
+    <header>
+        <div class="maxxtonLogo"> 
+            <img src="https://cdn.discordapp.com/attachments/553727899522433036/1037371233307725907/maxxton.png">
+        </div>
+        <div class="headerEmpty"></div>
+        <div class="headerProfileButton"><i class="fa-solid fa-circle-user fa-2xl"></i></div>
+    </header>
+    <div class="main">
+        <div class="sideNav">
+            <div class="sideNavList">
+                <div class="sideNavListButton" onclick="showFixedDays()">
+                    <div>Fixed days</div>
+                    <div id="fixedDaysContainer" style="display: none;">
+                        <input type="checkbox" id="monday">
+                        <label for="monday"> Monday</label><br>
+                        <input type="checkbox" id="tuesday">
+                        <label for="tuesday"> Tuesday</label><br>
+                        <input type="checkbox" id="wednesday">
+                        <label for="vehicle3"> Wednesday</label><br>
+                        <input type="checkbox" id="thursday">
+                        <label for="thursday"> Thursday</label><br>
+                        <input type="checkbox" id="friday">
+                        <label for="friday"> Friday</label>
+                    </div>
+                </div>
+                <div class="sideNavListButton">Manual days</div>
+                <div class="sideNavListButton" onclick="showNationalHoliday()">
+                    <div>National holidays</div>
+                    <ul id="nationalHolidayList" style="display: none;">
+                        <li>Christmas 25-26 December</li>
+                        <li>Easter 10 April</li>
+                    </ul>
+                </div>
+                <div class="sideNavListButton">Personal holidays</div>
+            </div>
+            <div class="sideNavChanges">
+                <div class="sideNavChangesTitle">Recent changes</div>
+                <div class="sideNavChangesContent">
+                    <p>2/11/2022<br>Added Holiday 21,22,23,24</p>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menuHeader">
+                <p id="totalWorkDays">Total workdays count:</p>
+                <p id="totalHomeDays">Home workdays count:</p>
+                <p id="totalOfficeDays">Office workdays count:</p>
+                <button onclick="checkWorkdayCount()">check work days</button>
+            </div>
+            <div class="table" id="app-calendar"></div>
+        </div>
+    </div>
+</body>
+
+>>>>>>> 7c4a04c (test)
 </html>
