@@ -12,6 +12,15 @@ header{
     margin: auto;
 }
 
+.menuHeader{
+  margin:auto;
+  width: 80%;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 30px;
+  text-align: center;
+}
+
 body{
     background-color: rgb(234, 253, 255);
 }
@@ -34,14 +43,26 @@ html, body{
 .sideNavList{
     background-color: rgb(229, 255, 255);
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, 1fr);
 }
 .sideNavListButton{
-    border: solid rgb(202, 202, 202) 1px;
+    border: solid rgb(150, 150, 150) 1px;
     margin: 20px;
     text-align: center;
     align-items: center;
     border-radius: 20px;
+}
+#fixedDaysContainer{
+  text-align: left;
+  padding: 10px;
+}
+#nationalHolidayList{
+  text-align: left;
+  padding: 10px;
+  margin-left: 15px;
+}
+.sideNavList div{
+  margin-top: 20px;
 }
 .sideNavListButton:hover{
     background-color:rgba(133, 243, 255, 0.545);
@@ -141,5 +162,12 @@ html, body{
    width: 75%;
    margin: auto;
    object-fit: contain;
+}
+
+.day i {
+  position:relative;
+  top: 50%;
+  font-size: 40px;
+  opacity: 10%;
 }
 

@@ -18,6 +18,7 @@ window.addEventListener('load', function () {
 
         let dropdown = document.createElement("div");
         dropdown.className = "dropdown";
+        dropdown.id = day;
         calendar.appendChild(dropdown)
 
         let dayElem = document.createElement("div");
@@ -25,6 +26,10 @@ window.addEventListener('load', function () {
         dayElem.innerHTML = `${day}`;
         dropdown.appendChild(dayElem);
 
+        let dayEmoji = document.createElement("i");
+        dayEmoji.id = `${day}dayEmoji`;
+        dayElem.appendChild(dayEmoji);
+        
         let dropMenu = document.createElement("div");
         dropMenu.className = "dropdown-content";
         dropMenu.id = "myDropdown";
@@ -56,6 +61,11 @@ window.addEventListener('load', function () {
         let dayMenuClear = document.createElement("p");
         dayMenuClear.innerHTML = "Clear";
         dropMenu.appendChild(dayMenuClear);
+        
+        if (isWeekend(day)){
+            dropdown.className = "dropdown vacation"
+            dayEmoji.className = "fa-solid fa-umbrella-beach";
+        }
 
         dropdown.addEventListener("click", event => {
             dropMenu.classList.toggle("show");
@@ -63,18 +73,28 @@ window.addEventListener('load', function () {
 
         dayMenuWorking.addEventListener("click", event => {
             dropdown.className = "dropdown working"
+            dayEmoji.className = "fa-solid fa-house"
+            checkWorkdayCount()
         })
         dayMenuOffice.addEventListener("click", event => {
             dropdown.className = "dropdown office"
+            dayEmoji.className = "fa-solid fa-briefcase"
+            checkWorkdayCount()
         })
         dayMenuVacation.addEventListener("click", event => {
             dropdown.className = "dropdown vacation"
+            dayEmoji.className = "fa-solid fa-umbrella-beach";
+            checkWorkdayCount()
         })
         dayMenuNationalHoliday.addEventListener("click", event => {
             dropdown.className = "dropdown nationalHoliday"
+            dayEmoji.className = "fa-solid fa-candy-cane"
+            checkWorkdayCount()
         })
         dayMenuClear.addEventListener("click", event => {
             dropdown.className = "dropdown"
+            dayEmoji.className = "";
+            checkWorkdayCount()
         })
     }
     document.getElementById("totalWorkDays").innerHTML = `Total workdays count:${workingDaysCount}`;
@@ -86,9 +106,11 @@ function showFixedDays() {
     var x = document.getElementById("fixedDaysContainer");
     if (x.style.display === "none") {
         x.style.display = "block";
+        x.style.marginTop = '-5px'
     } else {
         x.style.display = "none";
-    }
+        x.style.marginTop = '20px'
+    };
 }
 
 function showNationalHoliday() {
@@ -98,6 +120,97 @@ function showNationalHoliday() {
     } else {
         x.style.display = "none";
     }
+}
+
+function fixedDaysLoad(){
+    if(document.querySelector('#monday').checked){
+        for(let i = 1; i <= 31; i++){
+            let curDay = document.getElementById(`${i}`)
+            if(curDay.id%7 == 1){
+                curDay.className = "dropdown working";
+                document.getElementById(`${i}dayEmoji`).className = "fa-solid fa-house"
+            }
+        }
+    }else{
+        for(let i = 1; i <= 31; i++){
+            let curDay = document.getElementById(`${i}`)
+            if(curDay.id%7 == 1){
+                curDay.className = "dropdown";
+            }
+        }
+    }
+    if(document.querySelector('#tuesday').checked){
+        for(let i = 1; i <= 31; i++){
+            let curDay = document.getElementById(`${i}`)
+            if(curDay.id%7 == 2){
+                curDay.className = "dropdown working";
+                document.getElementById(`${i}dayEmoji`).className = "fa-solid fa-house"
+            }
+        }  
+    }else{
+        for(let i = 1; i <= 31; i++){
+            let curDay = document.getElementById(`${i}`)
+            if(curDay.id%7 == 2){
+                curDay.className = "dropdown";
+            }
+        }
+    }
+    if(document.querySelector('#wednesday').checked){
+        for(let i = 1; i <= 31; i++){
+            let curDay = document.getElementById(`${i}`)
+            if(curDay.id%7 == 3){
+                curDay.className = "dropdown working";
+                document.getElementById(`${i}dayEmoji`).className = "fa-solid fa-house"
+            }
+        }
+    }else{
+        for(let i = 1; i <= 31; i++){
+            let curDay = document.getElementById(`${i}`)
+            if(curDay.id%7 == 3){
+                curDay.className = "dropdown";
+            }
+        }
+    }
+    if(document.querySelector('#thursday').checked){
+        for(let i = 1; i <= 31; i++){
+            let curDay = document.getElementById(`${i}`)
+            if(curDay.id%7 == 4){
+                curDay.className = "dropdown working";
+                document.getElementById(`${i}dayEmoji`).className = "fa-solid fa-house"
+            }
+        }
+    }else{
+        for(let i = 1; i <= 31; i++){
+            let curDay = document.getElementById(`${i}`)
+            if(curDay.id%7 == 4){
+                curDay.className = "dropdown";
+            }
+        }
+    }
+    if(document.querySelector('#friday').checked){
+        for(let i = 1; i <= 31; i++){
+            let curDay = document.getElementById(`${i}`)
+            if(curDay.id%7 == 5){
+                curDay.className = "dropdown working";
+                document.getElementById(`${i}dayEmoji`).className = "fa-solid fa-house"
+            }
+        }
+    }else{
+        for(let i = 1; i <= 31; i++){
+            let curDay = document.getElementById(`${i}`)
+            if(curDay.id%7 == 5){
+                curDay.className = "dropdown";
+            }
+        }
+    }
+    for(let day = 1; day <= 31; day++){
+        if(document.getElementById(`${day}`).className == 'dropdown'){
+            document.getElementById(`${day}`).classList.add('office');
+            document.getElementById(`${day}dayEmoji`).className = "fa-solid fa-briefcase"
+
+        }
+    }
+    checkWorkdayCount()
 }
 
 function checkWorkdayCount(){
@@ -116,5 +229,5 @@ function checkWorkdayCount(){
     document.getElementById("totalWorkDays").innerHTML = `Total workdays count:${workingDaysCount}`;
     document.getElementById("totalHomeDays").innerHTML = `Home workdays count:${homeDaysCount}`;
     document.getElementById("totalOfficeDays").innerHTML = `Office workdays count:${officeDaysCount}`;
-}
+}   
 

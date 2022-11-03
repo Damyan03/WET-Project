@@ -19,8 +19,8 @@
     <div class="main">
         <div class="sideNav">
             <div class="sideNavList">
-                <div class="sideNavListButton" onclick="showFixedDays()">
-                    <div>Fixed days</div>
+                <div class="sideNavListButton">
+                    <div onclick="showFixedDays()">Fixed days from home</div>
                     <div id="fixedDaysContainer" style="display: none;">
                         <input type="checkbox" id="monday">
                         <label for="monday"> Monday</label><br>
@@ -31,10 +31,13 @@
                         <input type="checkbox" id="thursday">
                         <label for="thursday"> Thursday</label><br>
                         <input type="checkbox" id="friday">
-                        <label for="friday"> Friday</label>
+                        <label for="friday"> Friday</label><br>
+                        <button onclick="fixedDaysLoad()">Load days</button>
                     </div>
                 </div>
-                <div class="sideNavListButton">Manual days</div>
+                <div class="sideNavListButton">
+                    <div>Manual days</div>
+                </div>
                 <div class="sideNavListButton" onclick="showNationalHoliday()">
                     <div>National holidays</div>
                     <ul id="nationalHolidayList" style="display: none;">
@@ -42,7 +45,9 @@
                         <li>Easter 10 April</li>
                     </ul>
                 </div>
-                <div class="sideNavListButton">Personal holidays</div>
+                <div class="sideNavListButton">
+                    <div>Personal holidays</div>
+                </div>
             </div>
             <div class="sideNavChanges">
                 <div class="sideNavChangesTitle">Recent changes</div>
@@ -56,7 +61,6 @@
                 <p id="totalWorkDays">Total workdays count:</p>
                 <p id="totalHomeDays">Home workdays count:</p>
                 <p id="totalOfficeDays">Office workdays count:</p>
-                <button onclick="checkWorkdayCount()">check work days</button>
             </div>
             <div class="table" id="app-calendar"></div>
         </div>
